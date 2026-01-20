@@ -121,34 +121,35 @@ export default function App() {
         </motion.p>
 
         <div className="flex gap-4">
-          <a href="/resume.pdf" download className="btn btn-primary flex items-center gap-2">
+          {/* <a href="https://drive.google.com/file/d/1nih1ekERDr2Gys3pVqwvmXPMYaUs72CZ/view?usp=drive_link" download className="btn btn-primary flex items-center gap-2">
             📥 Download Resume
-          </a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline flex items-center gap-2">
+          </a> */}
+          <a href="https://docs.google.com/document/d/1JVdhqdGCa2YiMEaVF7GVegkWalosLvjd/edit?usp=sharing&ouid=117341703969123481043&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" className="btn btn-outline flex items-center gap-2">
             👀 View Resume
           </a>
         </div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="px-6 mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-blue-700 text-center">Skills</h2>
-        <div className="max-w-4xl mx-auto space-y-4">
-          {skills.map((skill, i) => (
-            <div key={i}>
-              <p className="font-medium mb-1">{skill.name}</p>
-              <div className="bg-gray-200 dark:bg-gray-700 rounded-full h-4">
-                <motion.div
-                  className="bg-blue-600 h-4 rounded-full"
-                  initial={{ width: 0 }}
-                  animate={{ width: `${skill.level}%` }}
-                  transition={{ duration: 1.5, delay: i * 0.2 }}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+<section id="skills" className="px-6 mb-12">
+  <h2 className="text-3xl font-bold mb-6 text-blue-700 text-center">
+    Skills
+  </h2>
+
+  <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 gap-4 text-center">
+    {skills.map((skill, i) => (
+      <div
+        key={i}
+        className="px-4 py-2 border border-blue-500 rounded-lg
+                   text-blue-600 font-medium hover:bg-blue-500
+                   hover:text-white transition"
+      >
+        {skill.name}
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* Static Projects Section */}
       <section id="projects" className="px-6 mb-12">
